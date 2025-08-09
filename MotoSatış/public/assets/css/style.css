@@ -1,0 +1,382 @@
+/* Dropdown menü stilleri */
+.dropdown {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+/* Dropdown menü stilleri */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: unset;
+    background: #fff;
+    min-width: 180px;
+    box-shadow: 0 4px 16px #b61e1e22;
+    border-radius: 8px;
+    z-index: 100;
+    padding: 0;
+    text-align: left;
+    transition: opacity 0.2s;
+    opacity: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+.dropdown-menu.show {
+    display: block;
+    opacity: 1;
+    pointer-events: auto;
+}
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu {
+    display: block;
+    opacity: 1;
+    pointer-events: auto;
+}
+.dropdown-menu li {
+    margin: 0;
+}
+.dropdown-menu li a {
+    display: block;
+    padding: 12px 22px;
+    color: #b61e1e;
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 0;
+    transition: background 0.2s, color 0.2s;
+    background: #fff;
+}
+.dropdown-menu li a:hover {
+    background: #f8f8f8;
+    color: #720000;
+}
+/* Dropdown menüye JS ile toggle edilen .show class'ı eklenince açılır */
+.dropdown-menu.show {
+    display: block;
+    opacity: 1;
+    pointer-events: auto;
+}
+/* Hover/focus ile açılma desteği de kalsın (mobilde tıklama, masaüstünde hover) */
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu {
+    display: block;
+    opacity: 1;
+    pointer-events: auto;
+}
+.dropdown > a {
+    position: relative;
+    z-index: 101;
+}
+.dropdown > a::after {
+    content: '▼';
+    font-size: 0.8rem;
+    margin-left: 4px;
+    color: #b61e1e;
+}
+.dropdown-menu li a {
+    display: block;
+    padding: 10px 18px;
+    color: #b61e1e;
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 6px;
+    transition: background 0.2s, color 0.2s;
+}
+.dropdown-menu li a:hover {
+    background: #ffe5e5;
+    color: #720000;
+}
+/* Featured alanını ortala */
+.featured-products {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 24px;
+}
+.featured-products .product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 36px;
+    margin: 40px 0;
+    width: 100%;
+}
+.featured-products .product-card {
+    width: 300px;
+    background: #000;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(37,99,235,0.07);
+    padding: 32px 24px 24px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: box-shadow 0.03s, transform 0.03s;
+    position: relative;
+    overflow: hidden;
+}
+.featured-products .product-card img {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    object-fit: cover;
+    max-height: 140px;
+}
+.featured-products h1,
+.featured-products h2,
+.featured-products p,
+.featured-products a {
+    text-align: center;
+}
+.banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 32px;
+    margin-bottom: 32px;
+    background: linear-gradient(90deg, #fff0f0 60%, #ffe5e5 100%);
+    border-radius: 22px;
+    box-shadow: 0 6px 32px #b61e1e22;
+    padding: 32px 18px 28px 18px;
+    position: relative;
+    overflow: hidden;
+}
+.banner::before {
+    content: '';
+    position: absolute;
+    left: -60px;
+    top: -60px;
+    width: 180px;
+    height: 180px;
+    background: radial-gradient(circle, #ffe5e5 60%, transparent 100%);
+    opacity: 0.5;
+    z-index: 0;
+}
+/* Search bar düzeni */
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.search-bar input[type="text"] {
+    flex: 1;
+    min-width: 180px;
+    margin-right: 4px;
+}
+.search-bar button {
+    margin-top: 0;
+}
+body {
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    background: linear-gradient(135deg, #f8fafc 0%, #f0f0f0 50%, #ffe5e5 100%);
+    margin: 0;
+    padding: 0;
+    color: #222;
+    min-height: 100vh;
+    letter-spacing: 0.01em;
+}
+
+header {
+    background: #fff;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    padding: 0;
+    margin-bottom: 40px;
+}
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 32px;
+    height: 72px;
+}
+.navbar-logo {
+    font-size: 2rem;
+    font-weight: 800;
+    color:#b61e1e;
+    letter-spacing: 1px;
+}
+.navbar-links {
+    display: flex;
+    gap: 32px;
+    position: relative;
+    align-items: center;
+}
+.navbar-links a {
+    color:#b61e1e;
+    font-weight: 500;
+    font-size: 1.05rem;
+    padding: 8px 0;
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s, border 0.3s;
+}
+.navbar-links a:hover {
+    color: #b61e1e;
+    border-bottom: 2px solid #b61e1e;
+}
+
+.container {
+    width: 92%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+h1, h2, h3 {
+    color:#720000;
+    font-weight: 700;
+    margin-top: 0;
+}
+a {
+    color:#b61e1e;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+a:hover {
+    color:#b61e1e;
+    text-decoration: underline;
+}
+ul {
+    list-style: none;
+    padding: 0;
+}
+li {
+    margin-bottom: 10px;
+}
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 36px;
+    margin: 40px 0;
+}
+.product-card {
+    background:#000;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(37,99,235,0.07);
+    padding: 32px 24px 24px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: box-shadow 0.03s, transform 0.03s;
+    position: relative;
+    overflow: hidden;
+}
+.product-card:hover {
+    box-shadow: 0 8px 32px rgba(143, 11, 11, 0.13);
+    transform: translateY(-4px) scale(1.02);
+}
+.product-card h2 {
+    font-size: 1.25rem;
+    margin: 0 0 10px 0;
+}
+.product-card .price {
+    color:#6b0505;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 18px;
+}
+.product-card .desc {
+    color:grey;
+    font-size: 0.98rem;
+    margin-bottom: 18px;
+}
+button, .btn {
+ background: linear-gradient(90deg, #b61e1e, #f00);
+    color: #fff;
+    border: none;
+    padding:12px 24px;
+    cursor: pointer;
+    border-radius: 12px;
+    font-size: 1.12rem;
+    font-weight: 600;
+    transition: background 0.3s, box-shadow 0.3s;
+    margin-top: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+button:hover, .btn:hover {
+    background: linear-gradient(90deg, #f00, #b61e1e);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+input, select, textarea {
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    padding: 10px 12px;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border 0.3s;
+}
+input:focus, select:focus, textarea:focus {
+    border: 1.5px solid #b61e1e;
+    outline: none;
+}
+.badge {
+    display: inline-block;
+    background: #facc15;
+    color: #000;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-radius: 12px;
+    padding: 2px 12px;
+    margin-left: 8px;
+}
+.cart-icon {
+    font-size: 1.3rem;
+    margin-right: 6px;
+    vertical-align: middle;
+}
+footer {
+    background: #f1f5f9;
+    color: #64748b;
+    text-align: center;
+    padding: 32px 0 16px 0;
+    margin-top: 64px;
+    font-size:1.05rem;
+    border-top: 1px solid #e5e7eb;
+}
+@media (max-width: 800px) {
+    .navbar {
+        flex-direction: column;
+        height: auto;
+        padding: 16px 0;
+        gap: 12px;
+    }
+    .container {
+        width: 98%;
+    }
+    .featured-products .product-list {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 18px;
+    }
+    .featured-products .product-card {
+        width: 90vw;
+        max-width: 320px;
+    }
+}
+@media (max-width: 600px) {
+    .container {
+        width: 99%;
+    }
+    .featured-products .product-list {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+    .featured-products .product-card {
+        width: 98vw;
+        max-width: 340px;
+    }
+    header, footer {
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+    .navbar {
+        padding: 0 4px;
+    }
+}
